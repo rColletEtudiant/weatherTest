@@ -83,6 +83,7 @@ public class WeatherFragment extends Fragment {
             WeatherModel weatherModel = bundle.getParcelable(WEATHER_PARCELABLE);
             displayWeatherData(weatherModel);
         } else if (bundle != null && bundle.getParcelable(CITY_PARCELABLE) != null) {
+            city = bundle.getParcelable(CITY_PARCELABLE);
             loadWeatherDataFromLoc(city.getLat(), city.getLon());
         }
         return view;

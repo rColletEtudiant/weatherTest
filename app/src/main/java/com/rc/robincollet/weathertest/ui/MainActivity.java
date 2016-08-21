@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity{
         List<City> cities = City.listAll(City.class);
         if (cities != null) {
             for (int i = 0; i < cities.size(); i++) {
-                if (cities.get(i).getName().isEmpty()) {
+                if (cities.get(i).getName() == null) {
                     City.delete(cities.get(i));
                 } else {
                     Fragment newFrag = new WeatherFragment();
@@ -98,8 +98,8 @@ public class MainActivity extends AppCompatActivity{
                                 newFragment.setArguments(bundle2);
                                 fragments.add(newFragment);
                                 pagerAdapter.notifyDataSetChanged();
-                                viewPager.setCurrentItem(viewPager.getAdapter().getCount());
                                 new City(weatherModel.getName(), weatherModel.getCoord().getLat(), weatherModel.getCoord().getLon()).save();
+                                viewPager.setCurrentItem(viewPager.getAdapter().getCount());
                             }
                         });
                 return false;
