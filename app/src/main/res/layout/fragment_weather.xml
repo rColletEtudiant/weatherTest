@@ -1,0 +1,143 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.rc.robincollet.weathertest.ui.WeatherFragment">
+
+    <RelativeLayout
+        android:id="@+id/progress_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/loc_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:visibility="gone"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/loc"/>
+
+            <TextView
+                android:id="@+id/city_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:textColor="@color/colorPrimaryText"
+                android:text="@string/city_time"
+                tools:text="Paris, 20/12/2012"
+                fontPath="fonts/Montserrat-Regular.ttf"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/weather_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/weather_image"
+                android:layout_width="110dp"
+                android:layout_height="110dp"/>
+
+            <TextView
+                android:id="@+id/temp_desc"
+                android:textSize="32sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginBottom="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cloudy"
+                tools:text="Cloudy"
+                fontPath="fonts/Montserrat-Regular.ttf"/>
+
+            <TextView
+                android:id="@+id/temp"
+                android:textSize="105sp"
+                android:textColor="@color/colorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/temp_celcius"
+                tools:text="32°c"
+                fontPath="fonts/Montserrat-Regular.ttf"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/low_temp"
+                    android:textSize="26sp"
+                    android:textColor="@color/colorSecondaryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:drawableLeft="@drawable/low_temp"
+                    android:text="@string/temp_celcius"
+                    tools:text="16°c"
+                    fontPath="fonts/Montserrat-Regular.ttf"/>
+
+                <TextView
+                    android:id="@+id/high_temp"
+                    android:textSize="26sp"
+                    android:textColor="@color/colorSecondaryText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
+                    android:drawableLeft="@drawable/high_temp"
+                    android:text="@string/temp_celcius"
+                    tools:text="24°c"
+                    fontPath="fonts/Montserrat-Regular.ttf"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/humid"
+                android:textSize="22sp"
+                android:textColor="@color/colorSecondaryText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Humidity 45%"
+                tools:text="Humidity 45%"
+                fontPath="fonts/Montserrat-Regular.ttf"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/delete"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+</FrameLayout>

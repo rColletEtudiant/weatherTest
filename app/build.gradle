@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
+
+    defaultConfig {
+        applicationId "com.rc.robincollet.weathertest"
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "WEATHER_KEY", "\"6636eb3444fa83a297401dc14541a75d\""
+            buildConfigField "String", "WEATHER_URL", "\"http://api.openweathermap.org\""
+        }
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "WEATHER_KEY", "\"6636eb3444fa83a297401dc14541a75d\""
+            buildConfigField "String", "WEATHER_URL", "\"http://api.openweathermap.org\""
+        }
+
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:support-v4:24.1.0'
+    compile 'com.android.support:appcompat-v7:24.1.0'
+
+    compile 'com.jakewharton:butterknife:8.2.1'
+    apt 'com.jakewharton:butterknife-compiler:8.2.1'
+
+    compile 'com.google.code.gson:gson:2.6.2'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    compile 'io.reactivex:rxandroid:1.1.0'
+    compile 'io.reactivex:rxjava:1.1.0'
+
+    compile 'com.facebook.stetho:stetho:1.1.1'
+    compile 'com.facebook.stetho:stetho-okhttp3:1.3.1'
+
+    compile 'uk.co.chrisjenx:calligraphy:2.2.0'
+    compile 'net.danlew:android.joda:2.9.4.1'
+    compile 'com.github.satyan:sugar:1.4'
+    compile 'com.miguelcatalan:materialsearchview:1.4.0'
+}
